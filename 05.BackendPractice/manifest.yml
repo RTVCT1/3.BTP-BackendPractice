@@ -1,3 +1,4 @@
 ---
 applications:
 - name: 05BackendPractice
+  path: target/05.BackendPractice-0.0.1-SNAPSHOT.jar
