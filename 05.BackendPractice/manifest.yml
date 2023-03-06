@@ -6,3 +6,5 @@ applications:
   memory: 1024M
   buildpacks:
   - sap_java_buildpack
+  services:
+  - mysql  
