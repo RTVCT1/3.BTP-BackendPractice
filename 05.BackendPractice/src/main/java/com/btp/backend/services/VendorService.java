@@ -33,7 +33,7 @@ public class VendorService {
 	public String deleteVendor(String vendorId) {
 		vendor.deleteById(vendorId);
 		Optional<Vendor> myVendor = vendor.findById(vendorId);
-		if(myVendor.isEmpty()) {
+		if(!myVendor.isPresent()) {
 			return "Deleted Successfully Vendor Id " + vendorId;
 		}else {
 			return "Not Deleted successfully";
