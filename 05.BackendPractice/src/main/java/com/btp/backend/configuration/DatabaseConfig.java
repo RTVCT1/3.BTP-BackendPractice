@@ -22,9 +22,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
 import com.btp.backend.entities.Vendor;
 import com.zaxxer.hikari.HikariDataSource;
-
 import javax.persistence.EntityManagerFactory;
-
 @Configuration
 public class DatabaseConfig extends AbstractCloudConfig{
 	
@@ -57,7 +55,6 @@ public class DatabaseConfig extends AbstractCloudConfig{
 		DataSource myConnection = DataSourceBuilder.create()
 								  .type(HikariDataSource.class)
 								  .driverClassName(com.sap.db.jdbc.Driver.class.getName())
-										  //com.sap.db.jdbc.Driver.class.getName())
 								  .url(hostname)
 								  .username(username)
 								  .password(password)
