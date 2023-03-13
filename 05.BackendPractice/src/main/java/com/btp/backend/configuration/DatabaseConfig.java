@@ -52,6 +52,11 @@ public class DatabaseConfig extends AbstractCloudConfig{
 													 "TomcatDbcpPooledDataSourceCreator");
 		DataSourceConfig dbConfig = new DataSourceConfig(dataSourceNames);
 		//DataSource hikariDataSource = connectionFactory().dataSource(dbConfig);
+		cloudFoundrtDataSourceConfigLogger.info("Detected Host name(URL) is : " + this.hostname);
+		cloudFoundrtDataSourceConfigLogger.info("Detected Port name is : " + this.port);
+		cloudFoundrtDataSourceConfigLogger.info("Detected DB name is : " + this.schemaName);
+		cloudFoundrtDataSourceConfigLogger.info("Detected User name is : " + this.username);
+		
 		DataSource myConnection = DataSourceBuilder.create()
 								  .type(HikariDataSource.class)
 								  .driverClassName(com.sap.db.jdbc.Driver.class.getName())
@@ -65,10 +70,7 @@ public class DatabaseConfig extends AbstractCloudConfig{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		cloudFoundrtDataSourceConfigLogger.info("Detected Host name is : " + this.hostname);
-		cloudFoundrtDataSourceConfigLogger.info("Detected Port name is : " + this.port);
-		cloudFoundrtDataSourceConfigLogger.info("Detected DB name is : " + this.schemaName);
-		cloudFoundrtDataSourceConfigLogger.info("Detected User name is : " + this.username);
+		
 		
 		return myConnection;
 	}
